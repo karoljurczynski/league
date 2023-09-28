@@ -1,0 +1,32 @@
+{
+  "name": "league",
+  "version": "0.0.1",
+  "description": "The main key of creating this app is to make creating your own tournaments in various contests simply and nicely without pain of calculating results or creating calendars of matches.",
+  "scripts": {
+    "postinstall": "cd backend && npm i && cd ../frontend && npm i && cd ..",
+    "build": "cd backend && npm run build && cd ../frontend && npm run build && cd ..",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "test": "",
+    "fa": "cd frontend && npm i",
+    "ba": "cd backend && npm i",
+    "fr": "cd frontend && npm uninstall",
+    "br": "cd backend && npm uninstall"
+  },
+  "author": "Karol Jurczyński",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "concurrently": "^8.2.1",
+    "eslint": "^8.50.0",
+    "eslint-config-standard-with-typescript": "^39.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

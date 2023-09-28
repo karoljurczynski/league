@@ -10,14 +10,15 @@ The main key of creating this app is to make creating your own tournaments in va
 - ESLint
 - Docker
 - Visual Studio Code
+- Cypress
 
 ## Frontend
 
 - React
 - Chakra UI
 - React Router
+- TanStack Query
 - react-hook-form
-- Cypress
 - Vite
 - Figma
 

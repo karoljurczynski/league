@@ -27,3 +27,10 @@ The main key of creating this app is to make creating your own tournaments in va
 - Node.js
 - Express.js
 - PostgreSQL
+
+## Starting the app
+
+1. Move to root directory `league`
+2. `npm install`
+3. `npm run dev`
+4. Frontend will be running on port 3000 by default as well as backend on 3001 (you can change it in .env file)

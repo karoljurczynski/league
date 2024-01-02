@@ -1,15 +1,21 @@
-import express, { type Express, type Request, type Response } from 'express'
+import express from 'express'
 import dotenv from 'dotenv'
+import cors from 'cors'
+import router from './routes'
+import { routes } from './routes/constants'
 
 dotenv.config()
 
-const app: Express = express()
+const app = express()
 const port = process.env.PORT
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello world!')
-})
+app.use(express.json())
+app.use(cors())
+
+app.use(routes.index, router)
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`)
 })
+
+export default app

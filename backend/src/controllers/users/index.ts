@@ -6,7 +6,6 @@ const service = new UsersService()
 export class UsersController {
   async index (_: Request, res: Response): Promise<void> {
     try {
-      console.log(service)
       const data = await service.index()
       res.json(data)
     } catch (e) {

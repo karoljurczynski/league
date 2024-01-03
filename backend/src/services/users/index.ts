@@ -1,5 +1,6 @@
 import { pool } from '@db/index'
 import { users } from '@queries/users'
+import { type AuthRequest } from '@utils/types/auth'
 import { type User, type UserRequest } from '@utils/types/users'
 
 export class UsersService {
@@ -8,9 +9,9 @@ export class UsersService {
     return results.rows
   }
 
-  async create (data: UserRequest): Promise<User> {
-    const { email, password, name, surname, age } = data
-    const results = await pool.query(users.create, [email, password, name, surname, age, new Date()])
+  async create (data: UserRequest | AuthRequest): Promise<User> {
+    const { email, password, name, surname, age } = data as UserRequest
+    const results = await pool.query(users.create, [email, password, name, surname, age, new Date().toISOString()])
     return results.rows[0]
   }
 
@@ -21,7 +22,7 @@ export class UsersService {
 
   async update (id: string, data: UserRequest): Promise<User> {
     const { name, surname, age } = data
-    const results = await pool.query(users.update, [id, name, surname, age, new Date()])
+    const results = await pool.query(users.update, [id, name, surname, age, new Date().toISOString()])
     return results.rows[0]
   }
 

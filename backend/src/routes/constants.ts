@@ -1,4 +1,5 @@
-export const rootRoutes = {
+export const routes = {
   index: '/',
-  fields: '/fields'
+  id: '/:id',
+  users: '/users'
 }

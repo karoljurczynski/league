@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import { rootRoutes } from './constants'
-import { fields } from './fields'
+import { routes } from '@routes/constants'
+import { users } from '@routes/users'
 
 const router = Router()
 
-router.use(rootRoutes.fields, fields)
+router.use(routes.users, users)
 
 export default router

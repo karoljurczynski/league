@@ -1,12 +1,13 @@
 import { UsersService } from '@services/users'
 import { type Request, type Response } from 'express'
 
-export class UsersController {
-  private readonly service = new UsersService()
+const service = new UsersService()
 
+export class UsersController {
   async index (_: Request, res: Response): Promise<void> {
     try {
-      const data = await this.service.index()
+      console.log(service)
+      const data = await service.index()
       res.json(data)
     } catch (e) {
       console.error('error', e)
@@ -15,7 +16,7 @@ export class UsersController {
 
   async create (req: Request, res: Response): Promise<void> {
     try {
-      const data = await this.service.create(req.body)
+      const data = await service.create(req.body)
       res.json(data)
     } catch (e) {
       console.error('error', e)
@@ -24,7 +25,7 @@ export class UsersController {
 
   async read (req: Request, res: Response): Promise<void> {
     try {
-      const data = await this.service.read(req.params.id)
+      const data = await service.read(req.params.id, 'id')
       res.json(data)
     } catch (e) {
       console.error('error', e)
@@ -33,7 +34,7 @@ export class UsersController {
 
   async update (req: Request, res: Response): Promise<void> {
     try {
-      const data = await this.service.update(req.params.id, req.body)
+      const data = await service.update(req.params.id, req.body)
       res.json(data)
     } catch (e) {
       console.error('error', e)
@@ -42,7 +43,7 @@ export class UsersController {
 
   async delete (req: Request, res: Response): Promise<void> {
     try {
-      const data = await this.service.delete(req.params.id)
+      const data = await service.delete(req.params.id)
       res.json(data)
     } catch (e) {
       console.error('error', e)

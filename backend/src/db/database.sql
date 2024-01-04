@@ -14,4 +14,4 @@ CREATE TABLE users (
   updated_at DATE
 );
 
-INSERT INTO users (email) VALUES('karol_jurczynski@o2.pl');
+INSERT INTO users (email) VALUES('example@gmail.com');

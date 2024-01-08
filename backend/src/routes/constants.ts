@@ -1,5 +1,7 @@
 export const routes = {
   index: '/',
   id: '/:id',
-  users: '/users'
+  users: '/users',
+  register: '/register',
+  login: '/login'
 }
